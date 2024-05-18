@@ -96,7 +96,7 @@
 
     <script>
       function display(value) {
-        let displayElement = document.getElement("display");
+        let displayElement = document.getElementById("display");
         if (displayElement.value === "Error") {
           displayElement.value = ""; // Agar pesan error otomatis hilang
         }
@@ -107,20 +107,20 @@
         else if (value === "/") {
           displayValue = "÷"; // Fix simbol pembagian
         }
-        document.getElement("display").value += displayValue;
+        document.getElementById("display").value += displayValue;
       }
 
       function clearDisplay() {
-        document.getElement("display").value = "";
+        document.getElementById("display").value = "";
       }
 
       function calculate() {
         try {
-          let expression = document.getElement("display").value.replace("×", "*");
+          let expression = document.getElementById("display").value.replace("×", "*");
           expression = expression.replace("÷", "/");
-          document.getElement("display").value = eval(expression);
+          document.getElementById("display").value = eval(expression);
         } catch (error) {
-          document.getElement("display").value = "Error";
+          document.getElementById("display").value = "Error";
         }
       }
     </script>
